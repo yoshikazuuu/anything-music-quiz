@@ -7,7 +7,7 @@ export default function Page() {
       <h1 className="font-bold text-xl">App is under construction.</h1>
 
       <span className="text-sm text-muted-foreground">
-        updates on{" "}
+        collab? hit me up on{" "}
         <Link
           className="hover:underline text-primary"
           href="https://x.com/yoshimoee"
