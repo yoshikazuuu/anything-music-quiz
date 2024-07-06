@@ -11,19 +11,19 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Everything Music Quiz",
+  title: "Anything Music Quiz",
   description: "Your so music quiz but customizable (i guess).",
   openGraph: {
-    url: "https://everthingmusicquiz.com",
-    siteName: "Everything Music Quiz",
+    url: "https://anythingmusicquiz.com",
+    siteName: "Anything Music Quiz",
     images: [
       {
-        url: "https://everthingmusicquiz.com/og.png",
+        url: "https://anythingmusicquiz.com/og.png",
         width: 1200,
         height: 630,
       },
       {
-        url: "https://everthingmusicquiz.com/og.png",
+        url: "https://anythingmusicquiz.com/og.png",
         width: 1200,
         height: 630,
         alt: "og",
