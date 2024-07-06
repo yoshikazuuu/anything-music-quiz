@@ -32,6 +32,24 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    site: "Anything Music Quiz",
+    description: "Your so music quiz but customizable (i guess).",
+    images: [
+      {
+        url: "https://anythingmusicquiz.com/og.png",
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: "https://anythingmusicquiz.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "og",
+      },
+    ],
+    card: "summary_large_image",
+  },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
