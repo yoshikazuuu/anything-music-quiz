@@ -88,7 +88,7 @@ export default async function LoginPage() {
                           ) : (
                             <FcGoogle size={20} color="#5865F2" />
                           )}
-                          Lanjutkan dengan {provider.name}
+                          Continue with {provider.name}
                         </Button>
                       </>
                     )}
@@ -98,7 +98,7 @@ export default async function LoginPage() {
 
               <div className="flex gap-2">
                 <p className="text-sm">Don&apos;t have an account?</p>
-                <Link href="/signup" className="text-sm text-[#D36A7B]">
+                <Link href="#" className="text-sm text-[#D36A7B]">
                   Register
                 </Link>
               </div>
