@@ -39,15 +39,23 @@ const games: GamemodeProps[] = [
 
 export default async function Page() {
   return (
-    <div className="grid grid-cols-3 w-8/12 gap-4">
-      {games.map((game, idx) => (
-        <GameModeSelector
-          key={idx}
-          title={game.title}
-          description={game.description}
-          image={game.image}
-        />
-      ))}
+    <div className="flex h-screen items-center justify-between flex-col p-10">
+      <p className="text-balance h-16 w-[102%] bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-center text-5xl font-extrabold tracking-tighter text-transparent  dark:bg-gradient-to-r dark:from-teal-400 dark:to-yellow-200">
+        Anything Music Quiz
+      </p>
+      <div className="grid grid-cols-3 w-8/12 gap-4">
+        {games.map((game, idx) => (
+          <GameModeSelector
+            key={idx}
+            title={game.title}
+            description={game.description}
+            image={game.image}
+          />
+        ))}
+      </div>
+      <div className="place-content-end">
+        <UserProfile />
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ import { RandomText } from "@/components/random-text";
 import { AMQLogo } from "@/components/logo";
 import { TwitterLink } from "@/components/twitter";
 import { ErrorLoginMessage } from "@/components/auth/error-login-message";
+import { Suspense } from "react";
 
 export default async function LoginPage() {
   return (
@@ -29,7 +30,9 @@ export default async function LoginPage() {
               <p className="mb-4 text-4xl font-bold text-foreground">
                 Welcome back!
               </p>
-              <ErrorLoginMessage />
+              <Suspense>
+                <ErrorLoginMessage />
+              </Suspense>
               <div className="flex flex-col w-full">
                 {Object.values(providerMap).map((provider) => (
                   <form
