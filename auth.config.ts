@@ -1,6 +1,7 @@
 import { NextAuthConfig } from "next-auth"
 import Discord from "next-auth/providers/discord"
-import Credentials from "next-auth/providers/credentials";
+import Google from "next-auth/providers/google"
+import Credentials from "next-auth/providers/credentials"
 import { NextResponse } from "next/server"
 
 export default {
@@ -22,7 +23,8 @@ export default {
             };
         },
     }),
-        Discord
+        Discord,
+        Google
     ],
     callbacks: {
         authorized: async ({ request, auth }) => {

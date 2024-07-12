@@ -1,15 +1,16 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Label } from "@/components/ui/label";
+
 import { Input } from "@/components/ui/input";
 import { SiDiscord } from "react-icons/si";
+import { FcGoogle } from "react-icons/fc";
 import { providerMap, signIn } from "@/auth";
 
 import { RandomText } from "@/components/random-text";
-import Image from "next/image";
+
 import { AMQLogo } from "@/components/logo";
 import { TwitterLink } from "@/components/twitter";
-import { Separator } from "@/components/ui/separator";
+import { ErrorLoginMessage } from "@/components/auth/error-login-message";
 
 export default async function LoginPage() {
   return (
@@ -23,11 +24,12 @@ export default async function LoginPage() {
           </p>
         </div>
         <div className="relative flex h-full w-[500px] flex-col items-center justify-center bg-accent">
-          <div className="relative flex h-full w-4/5 flex-col items-center justify-center">
+          <div className="relative flex h-full max-w-sm flex-col items-center justify-center">
             <div className="flex flex-col items-center justify-center gap-5">
               <p className="mb-4 text-4xl font-bold text-foreground">
                 Welcome back!
               </p>
+              <ErrorLoginMessage />
               <div className="flex flex-col w-full">
                 {Object.values(providerMap).map((provider) => (
                   <form
@@ -45,7 +47,7 @@ export default async function LoginPage() {
                     }}
                   >
                     {provider.id === "credentials" && (
-                      <div className="space-y-4 mb-4">
+                      <div className="space-y-2 mb-4">
                         <Input
                           required
                           placeholder="Email"
@@ -61,21 +63,28 @@ export default async function LoginPage() {
                       </div>
                     )}
                     {provider.id === "credentials" ? (
-                      <Button className="w-full gap-2 text-center">
-                        <p>Sign in</p>
-                      </Button>
-                    ) : (
                       <>
+                        <Button className="w-full gap-2 text-center">
+                          <p>Sign in</p>
+                        </Button>
+
                         <div className="flex items-center justify-center w-full text-xs uppercase my-6">
                           <div className="flex-grow h-px bg-foreground/50"></div>
                           <span className="px-2">OR</span>
                           <div className="flex-grow h-px bg-foreground/50"></div>
                         </div>
+                      </>
+                    ) : (
+                      <>
                         <Button
                           variant="outline"
-                          className="justify-start border-foreground/30 w-full gap-4 bg-foreground text-background"
+                          className="justify-start border-foreground/30 w-full mb-3 gap-4 bg-foreground text-background"
                         >
-                          <SiDiscord size={20} color="#5865F2" />
+                          {provider.id === "discord" ? (
+                            <SiDiscord size={20} color="#5865F2" />
+                          ) : (
+                            <FcGoogle size={20} color="#5865F2" />
+                          )}
                           Lanjutkan dengan {provider.name}
                         </Button>
                       </>
